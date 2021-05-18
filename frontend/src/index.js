@@ -4,6 +4,7 @@ import App from './App'
 import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
+import 'foundation-sites/dist/css/foundation.min.css';
 import coffeesReducer from './reducers/coffeesReducer'
 
 const store = createStore(coffeesReducer, applyMiddleware(thunk))

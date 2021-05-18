@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Grid, Cell, TopBar, TopBarTitle } from 'react-foundation';
  
 class App extends Component {
  
@@ -17,10 +18,20 @@ class App extends Component {
   // }
  
   render() {
-    console.log(this.props.catPics) // log will fire every time App renders
+
     return (
       <div className="App">
-        <h1>Coffee Reviews</h1>
+      	<TopBar>
+	        <TopBarTitle>Coffee Reviews</TopBarTitle>
+	      </TopBar>
+        <div className="grid-container">
+	        <Grid className="display grid-padding-x grid-padding-y">
+					  <Cell small={12} medium={3} large={4}>4 columns</Cell>
+					  <Cell small={12} medium={3} large={4}>4 columns</Cell>
+					  <Cell small={12} medium={3} large={4}>4 columns</Cell>
+					  <Cell small={12} medium={3} large={4}>4 columns</Cell>
+					</Grid>
+				</div>
       </div>
     );
   }
