@@ -4,7 +4,7 @@ export const fetchRoasters = () => {
     fetch('http://localhost:3000/roasters').then(response => {
       return response.json()
     }).then(responseJSON => {
-      dispatch({ type: 'ADD_ROASTERS', roasters: responseJSON.roasters })
+      dispatch({ type: 'ADD_ROASTERS', roasters: responseJSON.data })
     })
   }
 }

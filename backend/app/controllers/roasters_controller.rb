@@ -1,6 +1,8 @@
 class RoastersController < ApplicationController
 	def index
-		json: Roaster.all.to_json
+		roasters = Roaster.all
+		# binding.pry
+		render json: RoasterSerializer.new(roasters).serializable_hash
 	end
 
 	def show

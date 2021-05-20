@@ -18,7 +18,8 @@ class Roasters extends Component {
   	}
   }
 
-  renderRoasters = () => {
+  renderRoasters = (roasters) => {
+    console.log(roasters)
   	return <h3>List of roasters</h3>
   }
 
@@ -26,6 +27,7 @@ class Roasters extends Component {
 		return  <div>
 	  	        <Grid className="display grid-padding-x grid-padding-y">
 								<h1>Roasters</h1>
+                {this.loading()}
 							</Grid>
 						</div>
 	}
