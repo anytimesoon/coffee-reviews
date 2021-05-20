@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20210520143608) do
 
+
   create_table "coffees", force: :cascade do |t|
     t.string "name"
     t.string "tasting_notes"
