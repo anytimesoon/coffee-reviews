@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Grid, Cell, TopBar, TopBarTitle } from 'react-foundation';
+import {  BrowserRouter as Router,
+          Switch,
+          Route
+        } from "react-router-dom";
+import Navbar from './Navbar'
+import Roasters from './Roasters'
+import Coffees from './Coffees'
  
 class App extends Component {
  
@@ -21,17 +27,25 @@ class App extends Component {
 
     return (
       <div className="App">
-      	<TopBar>
-	        <TopBarTitle>Coffee Reviews</TopBarTitle>
-	      </TopBar>
-        <div className="grid-container">
-	        <Grid className="display grid-padding-x grid-padding-y">
-					  <Cell small={12} medium={3} large={4}>4 columns</Cell>
-					  <Cell small={12} medium={3} large={4}>4 columns</Cell>
-					  <Cell small={12} medium={3} large={4}>4 columns</Cell>
-					  <Cell small={12} medium={3} large={4}>4 columns</Cell>
-					</Grid>
-				</div>
+        <Router>
+        	<Navbar />
+
+
+          <div className="grid-container">
+
+              
+    					  <Switch>
+                  <Route path="/coffees">
+                    <Coffees />
+                  </Route>
+                  <Route path="/">
+                    <Roasters />
+                  </Route>
+                </Switch>
+
+  				</div>
+
+        </Router>
       </div>
     );
   }
