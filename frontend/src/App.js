@@ -5,8 +5,8 @@ import {  BrowserRouter as Router,
           Route
         } from "react-router-dom";
 import Navbar from './Navbar'
-import Roasters from './Roasters'
-import Coffees from './Coffees'
+import Roasters from './components/Roasters'
+import Coffees from './components/Coffees'
  
 class App extends Component {
  

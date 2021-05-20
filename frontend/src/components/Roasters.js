@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import {  Grid,
           Cell } from 'react-foundation';
 import { connect } from 'react-redux';
-import { fetchRoasters } from './actions/roasterActions'
+import { fetchRoasters } from '../actions/roasterActions'
+import RoasterCard from './Roaster'
 
 class Roasters extends Component {
  
@@ -14,19 +15,16 @@ class Roasters extends Component {
   	if (this.props.loading){
   		return <p>Loading....</p>
   	} else {
-  		return this.renderRoasters(this.props.roasters)
+  		return this.renderRoasters()
   	}
   }
 
-  renderRoasters = (roasters) => {
-    console.log(roasters)
-  	return <h3>List of roasters</h3>
-  }
+  renderRoasters = () => this.props.roasters.map(roaster => <RoasterCard name={roaster.attributes.name} logo={roaster.attributes.logo}/>)
 
 	render() {
 		return  <div>
 	  	        <Grid className="display grid-padding-x grid-padding-y">
-								<h1>Roasters</h1>
+								<Cell><h1>Roasters</h1></Cell>
                 {this.loading()}
 							</Grid>
 						</div>
