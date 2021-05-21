@@ -9,6 +9,13 @@ Roaster.all.each do |roaster|
 	roaster.destroy
 end
 
-Roaster.create(name: 'Square Mile', logo: 'https://i.pinimg.com/236x/17/1f/a4/171fa4b77da19d1921d6f6aa28ac5155.jpg')
-Roaster.create(name: 'Rave', logo: 'https://www.thecollaborators.com/wp-content/uploads/2020/04/01_Rave_Collabs-Web_Logo-1280x900.jpg')
-Roaster.create(name: 'Hasbean', logo: 'https://cdn.shopify.com/s/files/1/0023/1572/t/10/assets/logo.png')
+sm = Roaster.create(name: 'Square Mile', logo: 'https://i.pinimg.com/236x/17/1f/a4/171fa4b77da19d1921d6f6aa28ac5155.jpg')
+rave = Roaster.create(name: 'Rave', logo: 'https://www.thecollaborators.com/wp-content/uploads/2020/04/01_Rave_Collabs-Web_Logo-1280x900.jpg')
+hbean = Roaster.create(name: 'Hasbean', logo: 'https://cdn.shopify.com/s/files/1/0023/1572/t/10/assets/logo.png')
+
+
+Coffee.all.each do |coffee|
+	coffee.destroy
+end
+
+Coffee.create(name: "Colombian", tasting_notes: "apple, red berries, caramel", roast_level: "light", roaster_id: sm.id)
