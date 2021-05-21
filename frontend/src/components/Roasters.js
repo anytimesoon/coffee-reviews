@@ -47,7 +47,7 @@ class Roasters extends Component {
 }
 
 function ShowRoaster(){
-  const { roasterId } = useParams();
+  const { roasterId } = useParams()
   return <Roaster id={roasterId} />
 }
 

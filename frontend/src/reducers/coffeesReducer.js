@@ -1,4 +1,4 @@
-const coffeesReducer = (state = { coffees: [], roasters: [], loading: false }, action) => {
+const coffeesReducer = (state = { coffees: [], roasters: [], roaster: {}, myCoffees: [], loading: false }, action) => {
 	switch (action.type) {
 		case "LOADING_COFFEES":
       return {
@@ -18,6 +18,18 @@ const coffeesReducer = (state = { coffees: [], roasters: [], loading: false }, a
 			return {
         ...state,
         roasters: action.roasters,
+        loading: false
+      }
+    case "LOADING_ROASTER":
+      return {
+        ...state,
+        loading: true
+      }
+    case "ADD_ROASTER":
+      return {
+        ...state,
+        roaster: action.roaster.attributes,
+        myCoffees: action.roaster.relationships.coffees,
         loading: false
       }
 		default:
