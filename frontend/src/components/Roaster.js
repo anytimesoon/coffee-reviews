@@ -1,25 +1,14 @@
-import React from 'react'
-import {  Cell,
-					MediaObject,
-					MediaObjectSection,
-					Thumbnail,
-					Button } from 'react-foundation';
+import React, {Component} from 'react'
+import {  Grid,
+          Cell } from 'react-foundation';
 
+class Roaster extends Component {
+	render() {
+		return  <div>
+							<h1>Roaster</h1>
+							<p>ID: {this.props.id}</p>
+						</div>
+	}
+}
 
-const RoasterCard = props =>  <Cell small={12} medium={4}>
-																
-																<MediaObject>
-															    <MediaObjectSection>
-															      <Thumbnail src={props.logo}/>
-															    </MediaObjectSection>
-															    <MediaObjectSection isMain>
-															      <h3>{props.name}</h3>
-															    </MediaObjectSection>
-															  </MediaObject>
-
-															  <Button>See more from {props.name}</Button>
-															</Cell>
-
-export default RoasterCard
-
-// <Cell small={12} medium={4}><h3>{this.props.name}</h3></Cell>
+export default Roaster
