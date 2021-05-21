@@ -6,6 +6,7 @@ import {  Grid,
 					MediaObject,
 					MediaObjectSection,
 					Thumbnail  } from 'react-foundation';
+import RoasterCoffees from './RoasterCoffees'
 
 class Roaster extends Component {
 
@@ -27,7 +28,7 @@ class Roaster extends Component {
 							  </MediaObject>
 							</Cell>
 							<Cell>
-								
+								<RoasterCoffees coffees={this.props.myCoffees} />
 							</Cell>
 						</Grid>
 	}
