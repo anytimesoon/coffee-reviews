@@ -5,11 +5,8 @@ import { connect } from 'react-redux';
 import { fetchRoasters } from '../actions/roasterActions'
 import RoasterCard from './RoasterCard'
 import Roaster from "./Roaster"
-import {  BrowserRouter as Router,
-          Switch,
+import {  Switch,
           Route,
-          Link,
-          useRouteMatch,
           useParams } from "react-router-dom";
 
 

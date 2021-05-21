@@ -2,18 +2,8 @@ import React from 'react'
 import {  Cell,
 					MediaObject,
 					MediaObjectSection,
-					Thumbnail,
-					Button } from 'react-foundation';
-import {  BrowserRouter as Router,
-          Switch,
-          Route,
-          Link,
-          useRouteMatch,
-          useParams } from "react-router-dom";
-import Roaster from './Roaster'
-
-
-
+					Thumbnail } from 'react-foundation';
+import {  Link } from "react-router-dom";
 
 const RoasterCard = props =>  <Cell small={12} medium={4}>
 																
@@ -26,11 +16,9 @@ const RoasterCard = props =>  <Cell small={12} medium={4}>
 															    </MediaObjectSection>
 															  </MediaObject>
 
-															  <Link to={`/${props.id}`}>See more from {props.name}</Link>
+															  <Link to={`/${props.id}`} className="button">See more from {props.name}</Link>
 
 															  
 															</Cell>
 
 export default RoasterCard
-
-// <Cell small={12} medium={4}><h3>{this.props.name}</h3></Cell>
