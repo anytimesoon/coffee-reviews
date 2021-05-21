@@ -9,6 +9,6 @@ Roaster.all.each do |roaster|
 	roaster.destroy
 end
 
-Roaster.create(name: 'Square Mile', logo: 'http://uploads.escapethecity.org/organisation/avatar/10144/thumb_300x300_b738e90e-0ba6-493e-af1f-cf58d842813c.jpg')
+Roaster.create(name: 'Square Mile', logo: 'https://i.pinimg.com/236x/17/1f/a4/171fa4b77da19d1921d6f6aa28ac5155.jpg')
 Roaster.create(name: 'Rave', logo: 'https://www.thecollaborators.com/wp-content/uploads/2020/04/01_Rave_Collabs-Web_Logo-1280x900.jpg')
-Roaster.create(name: 'Hasbean', logo: 'http://imglogo.podbean.com/image-logo/749498/hblogo.jpg')
+Roaster.create(name: 'Hasbean', logo: 'https://cdn.shopify.com/s/files/1/0023/1572/t/10/assets/logo.png')
