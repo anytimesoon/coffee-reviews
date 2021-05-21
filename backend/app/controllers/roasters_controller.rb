@@ -6,5 +6,8 @@ class RoastersController < ApplicationController
 	end
 
 	def show
+		roaster = Roaster.find(params[:id])
+		# binding.pry
+		render json: RoasterSerializer.new(roaster).serializable_hash
 	end
 end
