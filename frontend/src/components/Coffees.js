@@ -10,9 +10,17 @@ import { fetchCoffees } from '../actions/coffeeActions'
 import { connect } from 'react-redux';
 
 class Coffees extends Component {
-	renderCoffeeCards = () => {
-		this.props.coffees.map(coffee => <CoffeeCard name={coffee.attributes.name} key={coffee.id} id={coffee.id}/>)
-	}
+  componentDidMount() {
+    this.props.fetchCoffees()
+  }
+
+  loading = () => {
+  	if (this.props.loading){
+  		return <p className="text-center">Loading...</p>
+  	} else {
+  		return this.props.coffees.map(coffee => <CoffeeCard name={coffee.attributes.name} key={coffee.id} coffee={coffee}/>)
+  	}
+  }
 
 	render() {
 		return  <div>
@@ -21,7 +29,7 @@ class Coffees extends Component {
 								<Route path="/coffees">
 			  	        <Grid className="display grid-padding-x grid-padding-y">
 			  	        	<Cell><h1>Coffees</h1></Cell>
-			  	        	{this.renderCoffeeCards()}
+			  	        	{this.loading()}
 									</Grid>
 								</Route>
 							</Switch>
