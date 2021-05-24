@@ -32,9 +32,7 @@ class Roasters extends Component {
 								
 
                 <Switch>
-                  <Route path="/:roasterId" component={ShowRoaster}>
-                    {/*<Roaster />*/}
-                  </Route>
+                  <Route path="/:roasterId" component={ShowRoaster} />
                   <Route path="/">
                     <Cell><h1>Roasters</h1></Cell>
                     {this.loading()}

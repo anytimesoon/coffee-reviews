@@ -15,7 +15,7 @@ export const fetchRoaster = (id) => {
     fetch(`http://localhost:3000/roasters/${id}`).then(response => {
       return response.json()
     }).then(responseJSON => {
-      setTimeout(dispatch({ type: 'ADD_ROASTER', roaster: responseJSON }), 5000)
+      dispatch({ type: 'ADD_ROASTER', roaster: responseJSON })
     })
   }
 }

@@ -8,6 +8,7 @@ import {  Grid,
 					Thumbnail  } from 'react-foundation';
 import RoasterCoffees from './RoasterCoffees'
 
+
 class Roaster extends Component {
 
   componentDidMount() {
@@ -23,24 +24,28 @@ class Roaster extends Component {
   }
 
 	render() {
-		return  <Grid>
-							<Cell>
-								
-								<MediaObject>
-							    <MediaObjectSection>
-							      <Thumbnail src={this.props.roaster.logo}/>
-							    </MediaObjectSection>
-							    <MediaObjectSection isMain>
-							      <h1>{this.props.roaster.name}</h1>
-							    </MediaObjectSection>
-							  </MediaObject>
-							</Cell>
-							<Cell>
-								{this.loadingCoffees()}
-							</Cell>
-						</Grid>
+		return  <div>
+
+									<Grid>
+										<Cell>
+											
+											<MediaObject>
+										    <MediaObjectSection>
+										      <Thumbnail src={this.props.roaster.logo}/>
+										    </MediaObjectSection>
+										    <MediaObjectSection isMain>
+										      <h1>{this.props.roaster.name}</h1>
+										    </MediaObjectSection>
+										  </MediaObject>
+										</Cell>
+										<Cell>
+											{this.loadingCoffees()}
+										</Cell>
+									</Grid>
+						</div>
 	}
 }
+
 
 const mapDispatchToProps = dispatch => {
   return {
