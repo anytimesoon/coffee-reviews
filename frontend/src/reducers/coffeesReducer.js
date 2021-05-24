@@ -3,11 +3,15 @@ const coffeesReducer = (state = { coffees: [], roasters: [], roaster: {}, myCoff
 		case "LOADING_COFFEES":
       return {
         ...state,
-        coffees: [...state.coffees],
+        coffees: [],
         loading: true
       }
 		case "ADD_COFFEES":
-			break;
+			return {
+        ...state,
+        coffees: [...state.coffees],
+        loading: false
+      }
 		case "LOADING_ROASTERS":
 			return {
         ...state,
