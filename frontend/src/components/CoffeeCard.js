@@ -12,7 +12,7 @@ const RoasterCard = props =>  <Cell small={12} medium={4} className="border">
 															      </ul>
 
 
-															  <Link to={`/${props.coffee.attributes.id}`} className="button">Read about this bean</Link>
+															  <Link to={`coffees/${props.coffee.id}`} className="button">Read about this bean</Link>
 
 															  
 															</Cell>

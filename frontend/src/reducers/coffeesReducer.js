@@ -26,7 +26,6 @@ const coffeesReducer = (state = { coffees: [], roasters: [], roaster: {}, myCoff
         loading: true
       }
     case "ADD_ROASTER":
-      console.log(action)
       return {
         ...state,
         roaster: action.roaster.data.attributes,

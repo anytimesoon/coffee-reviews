@@ -14,6 +14,14 @@ class Roaster extends Component {
     this.props.fetchRoaster(this.props.id)
   }
 
+  loadingCoffees = () => {
+  	if (this.props.loading) {
+  		return <p className="text-center">Loading....</p>
+  	} else {
+  		return <RoasterCoffees coffees={this.props.myCoffees} />
+  	}
+  }
+
 	render() {
 		return  <Grid>
 							<Cell>
@@ -28,7 +36,7 @@ class Roaster extends Component {
 							  </MediaObject>
 							</Cell>
 							<Cell>
-								<RoasterCoffees coffees={this.props.myCoffees} />
+								{this.loadingCoffees()}
 							</Cell>
 						</Grid>
 	}
@@ -43,7 +51,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     roaster: state.roaster,
-    myCoffees: state.myCoffees
+    myCoffees: state.myCoffees,
+    loading: state.loading
   }
 }
 

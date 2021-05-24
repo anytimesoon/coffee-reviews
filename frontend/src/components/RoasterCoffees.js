@@ -9,7 +9,7 @@ class RoasterCoffees extends Component {
 		if(this.props.coffees.length > 0){
 			return this.props.coffees.map(coffee => <CoffeeCard key={coffee.id} coffee={coffee}/>)
 		} else {
-			return <p>nothing to see here...</p>
+			return <p className="text-center">nothing to see here...</p>
 		}
 	}
 
