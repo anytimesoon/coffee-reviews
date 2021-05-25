@@ -1,4 +1,4 @@
-const coffeesReducer = (state = { coffees: [], coffee: {}, roasters: [], roaster: {}, myCoffees: [], loading: false }, action) => {
+const coffeesReducer = (state = { coffees: [], coffee: {}, reviews: [], roasters: [], roaster: {}, myCoffees: [], loading: false }, action) => {
 	switch (action.type) {
 		case "LOADING_COFFEES":
       return {
@@ -24,6 +24,17 @@ const coffeesReducer = (state = { coffees: [], coffee: {}, roasters: [], roaster
         coffee: action.coffee.data.attributes,
         reviews: action.coffee.included,
         loading: false
+      }
+    case "SAVE_REVIEW":
+      return {
+        ...state,
+        loading: true
+      }
+    case "ADD_REVIEW":
+      return {
+        ...state,
+        loading: false,
+        reviews: [...state.reviews, action.review]
       }
 		case "LOADING_ROASTERS":
 			return {

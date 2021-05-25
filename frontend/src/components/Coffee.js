@@ -4,11 +4,16 @@ import {  Grid,
           Cell } from 'react-foundation';
 import {fetchCoffee} from '../actions/coffeeActions'
 import Reviews from './Reviews'
+import {saveReview} from '../actions/reviewActions'
 
 class Coffee extends Component {
 	componentDidMount() {
     this.props.fetchCoffee(this.props.id)
   }
+
+	sendFormData = (formData) => {
+		this.props.saveReview(formData)
+	}
 
 	render() {
 		return  <div>
@@ -24,7 +29,7 @@ class Coffee extends Component {
 	  	        	</Cell>
 
 	  	        	<Cell>
-	  	        		<Reviews reviews={this.props.reviews}/>
+	  	        		<Reviews coffee={this.props.id} sendFormData={this.sendFormData} reviews={this.props.reviews} loading={this.props.loading}/>
 	  	        	</Cell>
 							</Grid>
 						</div>
@@ -33,7 +38,8 @@ class Coffee extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCoffee: (id) => dispatch(fetchCoffee(id))
+    fetchCoffee: (id) => dispatch(fetchCoffee(id)),
+    saveReview: (review) => dispatch(saveReview(review))
   }
 }
 

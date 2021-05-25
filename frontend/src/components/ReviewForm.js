@@ -23,8 +23,8 @@ class ReviewForm extends Component {
 	submitHandler = e => {
 		e.preventDefault()
 
-		let formData = {content: this.state.content}
-		// debugger
+		let formData = {content: this.state.content, coffee_id: this.props.coffee}
+		this.props.sendFormData(formData)
 		this.setState({content: ""})
 		this.closeReveal()
 	}
@@ -38,7 +38,7 @@ class ReviewForm extends Component {
 									  				<textarea name="content" placeholder="Write your review here..." onChange={e => this.textareaHandler(e)} value={this.state.content}/>
 
 									  				<input type="submit" className="button" value="Send"/>
-									  				<Button onClick={e => this.closeReveal()} className="hollow">Cancel</Button>
+									  				<a onClick={e => this.closeReveal()} className="button hollow">Cancel</a>
 									  			</form>
 									  		</Cell>
 									  	</Grid>
