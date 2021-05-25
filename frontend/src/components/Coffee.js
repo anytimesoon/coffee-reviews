@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {  Grid,
           Cell } from 'react-foundation';
 import {fetchCoffee} from '../actions/coffeeActions'
+import Reviews from './Reviews'
 
 class Coffee extends Component {
 	componentDidMount() {
@@ -11,7 +12,6 @@ class Coffee extends Component {
 
 	render() {
 		return  <div>
-							{console.log(this.props.coffee)}
 	  	        <Grid className="display grid-padding-x grid-padding-y">
 	  	        	<Cell medium={6}>
 	  	        		<h1>{this.props.coffee.name}</h1>
@@ -24,7 +24,7 @@ class Coffee extends Component {
 	  	        	</Cell>
 
 	  	        	<Cell>
-	  	        		<h3>Roasters</h3>
+	  	        		<Reviews reviews={this.props.reviews}/>
 	  	        	</Cell>
 							</Grid>
 						</div>

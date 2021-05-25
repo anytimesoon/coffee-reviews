@@ -22,6 +22,7 @@ const coffeesReducer = (state = { coffees: [], coffee: {}, roasters: [], roaster
       return {
         ...state,
         coffee: action.coffee.data.attributes,
+        reviews: action.coffee.included,
         loading: false
       }
 		case "LOADING_ROASTERS":
