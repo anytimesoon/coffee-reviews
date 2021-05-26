@@ -19,3 +19,11 @@ Coffee.all.each do |coffee|
 end
 
 Coffee.create(name: "Colombian", tasting_notes: "apple, red berries, caramel", roast_level: "light", roaster_id: sm.id)
+Coffee.create(name: "Ethiopian", tasting_notes: "orange, white grape, pineapple", roast_level: "light", roaster_id: sm.id)
+Coffee.create(name: "Guatemalan", tasting_notes: "chocolate, vanilla, hazelnut", roast_level: "light", roaster_id: rave.id)
+Coffee.create(name: "Kenyan", tasting_notes: "passionfruit, pineapple, mango", roast_level: "light", roaster_id: rave.id)
+Coffee.create(name: "Brazilian", tasting_notes: "watermelon, strawberry, prune", roast_level: "medium light", roaster_id: rave.id)
+Coffee.create(name: "Chinese", tasting_notes: "caramel, honey, cocoa nibs", roast_level: "medium", roaster_id: hbean.id)
+Coffee.create(name: "Peruvian", tasting_notes: "pekan, brown sugar, milk chocolate", roast_level: "medium dark", roaster_id: hbean.id)
+Coffee.create(name: "Colombian", tasting_notes: "lemon, apple, plum", roast_level: "light", roaster_id: hbean.id)
+Coffee.create(name: "Ethiopian", tasting_notes: "peach, banana, honeydew", roast_level: "light", roaster_id: hbean.id)
